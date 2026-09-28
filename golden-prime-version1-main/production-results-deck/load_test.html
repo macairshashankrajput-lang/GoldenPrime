@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Load Test Results</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#1A202C;font-family:Arial,sans-serif}.slide-container{width:1280px;min-height:720px;background:#fff;padding:58px 76px 0;position:relative}.grid{position:absolute;inset:32px;border:1px solid #CBD5E0}.top{position:relative;border-bottom:1px solid #CBD5E0;padding-bottom:18px;display:flex;justify-content:space-between}.kicker{font:700 16px 'Courier New',monospace;color:#DD6B20;letter-spacing:2px}.num{font:700 16px 'Courier New',monospace;color:#718096}.h1{font:700 43px/1.08 'Courier New',monospace;margin:42px 0 48px;max-width:900px}.content{display:flex;gap:48px}.main{flex:1}.table{width:100%;border-collapse:collapse;border:1px solid #1A202C}.table th{background:#1A202C;color:#fff;font:700 16px 'Courier New',monospace;text-align:left;padding:14px 18px;text-transform:uppercase}.table td{padding:16px 18px;border-bottom:1px solid #E2E8F0;font-size:18px;color:#4A5568}.table tr:nth-child(even){background:#F7FAFC}.sidebar{width:380px;border-left:4px solid #DD6B20;padding-left:28px}.sidebar h3{font:700 20px 'Courier New',monospace;margin-bottom:16px}.sidebar p{font-size:17px;line-height:1.5;color:#4A5568;margin-bottom:24px}.highlight-box{background:#FFF5F5;border:1px solid #FEB2B2;padding:20px;margin-top:10px}.highlight-box strong{color:#C53030;display:block;margin-bottom:8px;font:700 16px 'Courier New',monospace;text-transform:uppercase}.foot{position:absolute;left:76px;right:76px;bottom:54px;border-top:1px solid #CBD5E0;padding-top:12px;font-size:14px;color:#718096}
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="grid"></div>
+    <div class="top"><span class="kicker">08 / Performance Audit</span><span class="num">Load Test</span></div>
+    <div class="h1">Concurrent sync passed within a documented capacity boundary.</div>
+    <div class="content">
+        <div class="main">
+            <table class="table">
+                <thead>
+                    <tr><th>Metric</th><th>Final Bounded Run</th><th>Inherited Run</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Simulated Devices</td><td>3</td><td>8</td></tr>
+                    <tr><td>Total Requests</td><td>18</td><td>96</td></tr>
+                    <tr><td>Errors</td><td>0</td><td>0</td></tr>
+                    <tr><td>Throughput</td><td>2.57 req/s</td><td>~3.2 req/s</td></tr>
+                    <tr><td>Database Writes</td><td>Zero</td><td>Zero</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sidebar">
+            <h3>Capacity Finding</h3>
+            <p>The Supabase session-mode endpoint reports a <strong>15-client pool limit</strong>. While functional sync is verified, concurrent test workers can saturate this pool.</p>
+            <div class="highlight-box">
+                <strong>Scaling Requirement</strong>
+                <p>Higher production traffic should utilize a managed connection pooler or a deliberately bounded application pool.</p>
+            </div>
+        </div>
+    </div>
+    <div class="foot">Source: load-test-multi-device-sync.mjs · 26 August 2026</div>
+</div>
+</body>
+</html>

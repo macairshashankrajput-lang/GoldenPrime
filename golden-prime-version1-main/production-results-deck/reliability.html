@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reliability Evidence</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#1A202C;font-family:Arial,sans-serif}.slide-container{width:1280px;min-height:720px;background:#fff;padding:58px 76px 0;position:relative}.grid{position:absolute;inset:32px;border:1px solid #CBD5E0}.top{position:relative;border-bottom:1px solid #CBD5E0;padding-bottom:18px;display:flex;justify-content:space-between}.kicker{font:700 16px 'Courier New',monospace;color:#DD6B20;letter-spacing:2px}.num{font:700 16px 'Courier New',monospace;color:#718096}.h1{font:700 43px/1.08 'Courier New',monospace;margin:42px 0 48px;max-width:800px}.content{display:flex;gap:48px}.main{flex:1}.table{width:100%;border-collapse:collapse;border:1px solid #1A202C}.table th{background:#1A202C;color:#fff;font:700 16px 'Courier New',monospace;text-align:left;padding:14px 18px;text-transform:uppercase}.table td{padding:16px 18px;border-bottom:1px solid #E2E8F0;font-size:18px;color:#4A5568}.table tr:nth-child(even){background:#F7FAFC}.status-tag{font:700 14px 'Courier New',monospace;color:#DD6B20;text-transform:uppercase}.sidebar{width:320px;border-left:4px solid #DD6B20;padding-left:28px}.sidebar h3{font:700 20px 'Courier New',monospace;margin-bottom:16px}.sidebar p{font-size:17px;line-height:1.5;color:#4A5568;margin-bottom:24px}.foot{position:absolute;left:76px;right:76px;bottom:54px;border-top:1px solid #CBD5E0;padding-top:12px;font-size:14px;color:#718096}
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="grid"></div>
+    <div class="top"><span class="kicker">07 / Validation Audit</span><span class="num">Reliability</span></div>
+    <div class="h1">Reliability evidence is broad and repeatable.</div>
+    <div class="content">
+        <div class="main">
+            <table class="table">
+                <thead>
+                    <tr><th>Validation Layer</th><th>Scope & Result</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Regression Suite</td><td>47 test files / 223 tests passed serially</td><td class="status-tag">Verified</td></tr>
+                    <tr><td>Static Analysis</td><td>TypeScript strict mode validation</td><td class="status-tag">Passed</td></tr>
+                    <tr><td>Production Build</td><td>Vite PWA and server bundle generation</td><td class="status-tag">Passed</td></tr>
+                    <tr><td>Auth Boundary</td><td>Temporary Owner login/role/cleanup check</td><td class="status-tag">Verified</td></tr>
+                    <tr><td>Clean Baseline</td><td>Shivam manager preserved; 0 operational rows</td><td class="status-tag">Active</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sidebar">
+            <h3>Release Integrity</h3>
+            <p>The application passed a full regression pass covering role isolation, financial invariants, and storage policies.</p>
+            <h3>Clean Start</h3>
+            <p>Operational data reset was executed transaction-safely. The delivery database is empty of all buildings, tenants, and bills.</p>
+        </div>
+    </div>
+    <div class="foot">Source: production-readiness-report.md · 26 August 2026</div>
+</div>
+</body>
+</html>

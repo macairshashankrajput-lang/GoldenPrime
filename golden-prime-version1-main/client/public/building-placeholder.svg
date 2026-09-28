@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" role="img" aria-labelledby="title">
+  <title id="title">Building placeholder</title>
+  <rect width="800" height="320" fill="#113D39"/>
+  <path d="M236 284V96l164-66 164 66v188H236Z" fill="#BEE7D7" opacity=".9"/>
+  <path d="M342 284V78l58-25 58 25v206H342Z" fill="#0A6558"/>
+  <path d="M270 126h46v38h-46zm0 65h46v38h-46zm208-65h46v38h-46zm0 65h46v38h-46z" fill="#113D39"/>
+  <path d="M374 202h52v82h-52z" fill="#F8F7F3"/>
+  <circle cx="112" cy="84" r="28" fill="#BEE7D7" opacity=".18"/>
+  <circle cx="672" cy="54" r="42" fill="#BEE7D7" opacity=".12"/>
+</svg>

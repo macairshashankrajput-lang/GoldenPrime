@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Role Boundaries</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#1A202C;font-family:Arial,sans-serif}.slide-container{width:1280px;min-height:720px;background:#fff;padding:58px 76px 0;position:relative}.grid{position:absolute;inset:32px;border:1px solid #CBD5E0}.top{position:relative;border-bottom:1px solid #CBD5E0;padding-bottom:18px;display:flex;justify-content:space-between}.kicker{font:700 16px 'Courier New',monospace;color:#DD6B20;letter-spacing:2px}.num{font:700 16px 'Courier New',monospace;color:#718096}.h1{font:700 43px/1.08 'Courier New',monospace;margin:42px 0 48px;max-width:850px}.roles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #1A202C;border-bottom:1px solid #1A202C}.role-col{min-height:320px;padding:24px 22px 0;border-right:1px solid #CBD5E0}.role-col:last-child{border-right:0}.role-tag{font:700 14px 'Courier New',monospace;color:#DD6B20;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;display:block}.role-title{font:700 24px 'Courier New',monospace;margin-bottom:20px;color:#1A202C}.role-list{list-style:none;padding:0}.role-list li{font-size:17px;line-height:1.4;color:#4A5568;margin-bottom:14px;padding-left:20px;position:relative}.role-list li::before{content:"—";position:absolute;left:0;color:#DD6B20}.security-note{margin-top:40px;padding-top:20px;border-top:1px solid #E2E8F0;font:700 15px 'Courier New',monospace;color:#718096;text-transform:uppercase}.foot{position:absolute;left:76px;right:76px;bottom:54px;border-top:1px solid #CBD5E0;padding-top:12px;font-size:14px;color:#718096}
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="grid"></div>
+    <div class="top">
+        <span class="kicker">06 / Security Architecture</span>
+        <span class="num">Role boundaries</span>
+    </div>
+    <div class="h1">Role boundaries protect each building’s data.</div>
+    <div class="roles">
+        <div class="role-col">
+            <span class="role-tag">Primary Operator</span>
+            <div class="role-title">Building Manager</div>
+            <ul class="role-list">
+                <li>Delegated Owner-equivalent operational access</li>
+                <li>Full control over assigned building workspaces</li>
+                <li>Management of rooms, tenants, and collections</li>
+                <li>Access to audit history and export tools</li>
+            </ul>
+        </div>
+        <div class="role-col">
+            <span class="role-tag">Stakeholder</span>
+            <div class="role-title">Building Owner</div>
+            <ul class="role-list">
+                <li>Access limited to linked-building profiles</li>
+                <li>High-level approved financial summaries</li>
+                <li>Visibility into monthly profit and occupancy</li>
+                <li>No access to granular tenant management</li>
+            </ul>
+        </div>
+        <div class="role-col">
+            <span class="role-tag">End User</span>
+            <div class="role-title">Tenant Portal</div>
+            <ul class="role-list">
+                <li>Scoped to individual room and rent data</li>
+                <li>Electricity bill and shared charge visibility</li>
+                <li>Payment guidance and receipt submission</li>
+                <li>Direct contact with Building Manager</li>
+            </ul>
+        </div>
+    </div>
+    <div class="security-note">Enforced via PostgreSQL RLS and tRPC procedure-level scope validation</div>
+    <div class="foot">Architecture source: server/routers.ts and drizzle/schema.ts</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Building Onboarding</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#1A202C;font-family:Arial,sans-serif}.slide-container{width:1280px;min-height:720px;background:#fff;padding:58px 76px 0;position:relative}.grid{position:absolute;inset:32px;border:1px solid #CBD5E0}.top{position:relative;border-bottom:1px solid #CBD5E0;padding-bottom:18px;display:flex;justify-content:space-between}.kicker{font:700 16px 'Courier New',monospace;color:#DD6B20;letter-spacing:2px}.num{font:700 16px 'Courier New',monospace;color:#718096}.h1{font:700 42px/1.1 'Courier New',monospace;margin:42px 0 40px;max-width:850px}.content{display:grid;grid-template-columns:400px 1fr;gap:64px;margin-top:20px}.workflow{border:1px solid #1A202C;padding:32px}.step{margin-bottom:32px;position:relative;padding-left:48px}.step:last-child{margin-bottom:0}.step-num{position:absolute;left:0;top:0;width:32px;height:32px;border:1px solid #DD6B20;display:flex;align-items:center;justify-content:center;font:700 16px 'Courier New',monospace;color:#DD6B20}.step-title{font:700 18px 'Courier New',monospace;margin-bottom:4px}.step-desc{font-size:15px;color:#718096}.details{border-top:1px solid #1A202C}.detail-row{padding:24px 0;border-bottom:1px solid #E2E8F0;display:grid;grid-template-columns:200px 1fr;gap:24px}.detail-label{font:700 16px 'Courier New',monospace;color:#DD6B20;text-transform:uppercase}.detail-text{font-size:18px;line-height:1.4;color:#4A5568}.foot{position:absolute;left:76px;right:76px;bottom:54px;border-top:1px solid #CBD5E0;padding-top:12px;font-size:14px;color:#718096}
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="grid"></div>
+    <div class="top"><span class="kicker">03 / Onboarding</span><span class="num">Guided Workflow</span></div>
+    <div class="h1">Building onboarding is now a guided Manager workflow.</div>
+    <div class="content">
+        <div class="workflow">
+            <div class="step"><div class="step-num">01</div><div class="step-title">Empty State</div><div class="step-desc">Clear CTA for first-building creation.</div></div>
+            <div class="step"><div class="step-num">02</div><div class="step-title">Setup Form</div><div class="step-desc">Capture property, owner, and rates.</div></div>
+            <div class="step"><div class="step-num">03</div><div class="step-title">Floor Gen</div><div class="step-desc">Automatic Ground + N + Terrace creation.</div></div>
+            <div class="step"><div class="step-num">04</div><div class="step-title">Workspace</div><div class="step-desc">Scoped operations for the new building.</div></div>
+        </div>
+        <div class="details">
+            <div class="detail-row">
+                <div class="detail-label">CTA Entry</div>
+                <div class="detail-text">Dashboard empty states provide high-visibility "New Building" buttons to eliminate setup friction.</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Onboarding</div>
+                <div class="detail-text">Unified form links existing Owners or creates new accounts while setting building-wide electricity and rent defaults.</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Floor Logic</div>
+                <div class="detail-text">Entering a floor count automatically generates the Ground Floor, numbered levels, and Terrace in a single transaction.</div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">Verified: BuildingOnboardingModal.tsx and floor-generation.test.ts</div>
+</div>
+</body>
+</html>

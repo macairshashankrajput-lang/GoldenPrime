@@ -1,0 +1,30 @@
+# Golden Prime PG Verification Notes
+
+- Manager session for Shivam was active on the Buildings workspace on 2026-08-22.
+- The persistent building selector showed both Golden Stay and Golden Prime PG.
+- The Golden Stay card rendered its share, QR, edit, and protected delete controls.
+- Opening the QR control rendered a scan-ready property-information code and a share action in the building card.
+- The Manager Room creation flow preserved the selected building and rendered dedicated room-type, cooling (AC or Non-AC), capacity, and rent controls.
+- The selected-building repair was validated by switching from Golden Stay to Golden Prime PG on Billing; the selected workspace persisted and loaded Shashank's building-scoped rent history.
+- The Golden Prime PG electricity record rendered the pending collection status and an edit form with received amount, payment date, due date, receipt URL, and notes controls.
+- After the development-server restart, the authenticated Manager session remained available and the persisted workspace defaulted to Golden Stay until a different building was selected.
+- The Manager changed the active workspace to Golden Prime PG on Billing, and the tenant-specific August rent history refreshed correctly for that building.
+- The pending August electricity bill was given a past due date during an authenticated Manager session; the UI then displayed its overdue state and the dedicated Create reminder action.
+- The Manager activated the Create reminder action for the overdue electricity bill, and the application confirmed that the electricity reminder was created.
+- The active Golden Prime PG workspace persisted on both the Tenant and Expenses routes; tenant room details displayed Non-AC classification and the expense ledger remained correctly scoped to the selected building.
+- The created electricity reminder appeared on the Golden Prime PG Reminders screen, and the Exports screen displayed Golden Prime PG as the immutable building scope for report generation.
+- A final authenticated 390×844 Manager regression passed: the Golden Prime PG selection persisted across route changes, the mobile Buildings screen rendered the Manager QR card, the mobile Rooms form exposed AC classification, the mobile Billing screen exposed electricity collection and reminder controls, and the dashboard contained Owner-share and Manager-result metrics.
+- Expanded authenticated 390×844 evidence verified the selected-building profile editor with landmark, contact, owner-share, photo, and map fields, plus the resulting electricity reminder entry in the Manager reminder list.
+- Current workflow audit confirmed that Room 302 is correctly represented as partially occupied (1 of 2 beds), while the dashboard separately reports two entirely vacant rooms and four available beds.
+- The authenticated Manager tenant workspace renders the new per-tenant resident-access sharing action and explicitly keeps passwords out of the shared invitation message.
+- The selected-building expense editor renders the new receipt or payment-link field alongside amount, date, category, and reference notes.
+- The authenticated Manager reminder board displays a share-ready message action for both active electricity and completed operational reminders.
+- Authenticated 390×844 verification passed for the Manager tenant invitation action, Manager reminder sharing, expense receipt-link entry, and the tenant portal Building Manager QR panel.
+- Current role-access reproduction confirms the Manager Buildings workspace loads and opens the complete New building operation form without a runtime error.
+- Current role-access reproduction confirms the supplied Owner account signs in successfully and loads the full multi-building operational workspace.
+- The Tenant portal now shows Shashank’s restored August electricity record: 200 units at ₹12 per unit, totaling ₹2,400.
+- Authenticated Tenant verification submitted a maintenance request successfully; it appeared immediately in the tenant reminder list for Manager follow-up.
+- Authenticated Manager verification received that Tenant maintenance request in the selected-building Reminders workspace and completed it successfully.
+- Authenticated Owner verification saved the Golden Prime PG Building Manager contact number successfully; the building card now shows the configured contact value.
+- Authenticated 390×844 role-access verification passed: Owner building profile operation is available, Manager receives the tenant request in Golden Prime PG reminders, and the Tenant portal shows the restored electricity record, Call Manager, and Request support actions.
+- Current Owner Room 302 reproduction opens the edit form and submits the existing values successfully; the repair will replace this fragile shared editor with direct card editing and richer mobile-first room details.

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Proof and Payment Operations</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#1A202C;font-family:Arial,sans-serif}
+.slide-container{width:1280px;min-height:720px;background:#fff;padding:58px 76px 0;position:relative}
+.grid{position:absolute;inset:32px;border:1px solid #CBD5E0}
+.top{position:relative;border-bottom:1px solid #CBD5E0;padding-bottom:18px;display:flex;justify-content:space-between}
+.kicker{font:700 16px 'Courier New',monospace;color:#DD6B20;letter-spacing:2px}
+.num{font:700 16px 'Courier New',monospace;color:#718096}
+.h1{font:700 43px/1.08 'Courier New',monospace;margin:42px 0 48px;max-width:900px}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:20px}
+.section{border-top:2px solid #1A202C;padding-top:24px}
+.section-title{font:700 24px 'Courier New',monospace;color:#DD6B20;margin-bottom:20px;text-transform:uppercase}
+.feature-list{list-style:none}
+.feature-item{margin-bottom:28px;display:grid;grid-template-columns:40px 1fr;gap:12px}
+.feature-icon{font:700 20px 'Courier New',monospace;color:#DD6B20}
+.feature-text{font-size:19px;line-height:1.4;color:#4A5568}
+.feature-text strong{color:#1A202C;display:block;margin-bottom:4px}
+.foot{position:absolute;left:76px;right:76px;bottom:54px;border-top:1px solid #CBD5E0;padding-top:12px;font-size:14px;color:#718096}
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="grid"></div>
+    <div class="top">
+        <span class="kicker">05 / Mobile Operations</span>
+        <span class="num">Proof & Payments</span>
+    </div>
+    <div class="h1">Proof and payment operations are built for mobile use.</div>
+    
+    <div class="content-grid">
+        <div class="section">
+            <div class="section-title">Payment & Storage</div>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <span class="feature-icon">01</span>
+                    <span class="feature-text">
+                        <strong>Multi-Method Support</strong>
+                        Native tracking for Cash, UPI, and Bank Transfer with persisted metadata and QR guidance.
+                    </span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">02</span>
+                    <span class="feature-text">
+                        <strong>Private Storage</strong>
+                        All receipts and meter photos reside in a private Supabase bucket with signed managed URLs.
+                    </span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Upload & Review</div>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <span class="feature-icon">03</span>
+                    <span class="feature-text">
+                        <strong>Feedback Loop</strong>
+                        Live progress bars, animated loaders, and explicit cancel/retry/dismiss controls for reliability.
+                    </span>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">04</span>
+                    <span class="feature-text">
+                        <strong>Auditability</strong>
+                        Manager review workflow requires notes for rejections; all decisions are logged in the audit history.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="foot">Verification: payment-proof.test.ts · upload-feedback-ui.test.ts</div>
+</div>
+</body>
+</html>

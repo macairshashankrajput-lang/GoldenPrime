@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vercel Routing & Deployment</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#1A202C;font-family:Arial,sans-serif}.slide-container{width:1280px;min-height:720px;background:#fff;padding:58px 76px 0;position:relative}.grid{position:absolute;inset:32px;border:1px solid #CBD5E0}.top{position:relative;border-bottom:1px solid #CBD5E0;padding-bottom:18px;display:flex;justify-content:space-between}.kicker{font:700 16px 'Courier New',monospace;color:#DD6B20;letter-spacing:2px}.num{font:700 16px 'Courier New',monospace;color:#718096}.h1{font:700 43px/1.08 'Courier New',monospace;margin:42px 0 48px;max-width:850px}.content{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;margin-top:20px}.rules{border-top:2px solid #1A202C}.rule-item{padding:24px 0;border-bottom:1px solid #E2E8F0;display:grid;grid-template-columns:160px 1fr;gap:24px}.rule-path{font:700 16px 'Courier New',monospace;color:#DD6B20}.rule-desc{font-size:18px;line-height:1.4;color:#4A5568}.rule-desc strong{color:#1A202C;display:block;margin-bottom:4px}.deploy-panel{border:1px solid #1A202C;padding:32px;display:flex;flex-direction:column;align-items:center;text-align:center}.deploy-panel img{width:200px;height:200px;object-fit:contain;margin-bottom:32px}.status-box{background:#F7FAFC;border:1px solid #CBD5E0;padding:20px;width:100%}.status-line{font:700 14px 'Courier New',monospace;text-transform:uppercase;letter-spacing:1px;color:#48BB78;margin-bottom:8px}.url{font-size:16px;color:#4A5568;word-break:break-all}.foot{position:absolute;left:76px;right:76px;bottom:54px;border-top:1px solid #CBD5E0;padding-top:12px;font-size:14px;color:#718096}
+</style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="grid"></div>
+    <div class="top">
+        <span class="kicker">09 / Deployment</span>
+        <span class="num">Vercel Routing</span>
+    </div>
+    <div class="h1">Vercel routing now serves the right application.</div>
+    <div class="content">
+        <div class="rules">
+            <div class="rule-item">
+                <div class="rule-path">/</div>
+                <div class="rule-desc">
+                    <strong>Static PWA Output</strong>
+                    Vite build artifacts served from the dist/public directory with SPA fallback routing.
+                </div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-path">/api/*</div>
+                <div class="rule-desc">
+                    <strong>tRPC Proxy</strong>
+                    Authenticated API requests forwarded to the validated Supabase PostgreSQL application server.
+                </div>
+            </div>
+            <div class="rule-item">
+                <div class="rule-path">/storage/*</div>
+                <div class="rule-desc">
+                    <strong>Media Proxy</strong>
+                    Managed image requests proxied to the private Supabase Storage bucket via signed URLs.
+                </div>
+            </div>
+        </div>
+        <div class="deploy-panel">
+            <img src="/home/ubuntu/upload/search_images/G8dgW3ZEXXvd.webp" alt="Vercel Logo" />
+            <div class="status-box">
+                <div class="status-line">● Deployment Verified</div>
+                <div class="url">goldenprimevercel.vercel.app</div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">Verification: vercel-deployment-contract.test.ts · 26 August 2026</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,432 @@
+# Project TODO
+
+- [x] Define role-based access controls for Owner, Manager, Helper, and Cook, with Owner as full administrator.
+- [x] Design and migrate database tables for buildings, floors, rooms, tenant profiles, room allocations, rent payments, meter readings, expenses, reminders, and audit-ready export filters.
+- [x] Implement multi-building, floor, and room management with configurable occupancy and electricity rates.
+- [x] Implement tenant onboarding, individual sharing rent splits, active room allocations, automatic vacant or occupied room status, and a move-out workflow.
+- [x] Implement monthly rent records with exact paid, pending, and partial status values, payment history, balances, due dates, and overdue indicators.
+- [x] Implement electricity meter reading entry with automatic unit-consumption and bill calculations using each building's configurable rate.
+- [x] Implement building-level expense tracking for maintenance, groceries, salaries, utilities, and custom expense notes.
+- [x] Implement tenant-specific and owner-visible reminder workflows for rent due dates and overdue rent alerts, including recurring automation after publication.
+- [x] Build a refined responsive dashboard showing building counts, occupancy, monthly rent collected and pending, recent expenses, and overdue actions.
+- [x] Build polished management screens for buildings, rooms, tenants, rent, electricity, expenses, reminders, exports, and settings.
+- [x] Implement filterable CSV export for tenants, monthly rent, electricity bills, and expense ledger by building and date range.
+- [x] Apply a premium, accessible visual system with sophisticated typography, purposeful color hierarchy, responsive layout, focus states, and motion preferences.
+- [x] Add unit tests for permission evaluation, rent status validation, occupancy determination, electricity calculations, and export filtering.
+- [x] Verify the web application across desktop and mobile views, including loading, empty, error, and authorization states.
+- [x] Create a private GitHub repository named golden-prime-pg and push the finished source code.
+- [x] Save a release checkpoint and provide publishing instructions for the managed free hosting environment.
+- [x] Prevent duplicate active room allocations for a tenant and add lifecycle coverage for move-out and reallocation.
+- [x] Optimize every application workflow for mobile browser use, including touch targets, compact navigation, one-handed actions, safe-area spacing, and responsive table alternatives.
+- [x] Replace Manus OAuth with secure phone-number and password authentication, including a dedicated login page and logout flow.
+- [x] Seed the supplied Owner, Manager, and Shashank tenant accounts without storing plaintext passwords in source control.
+- [x] Seed Shashank’s individual room allocation, ₹13,500 August rent payment, and 200-unit electricity bill at ₹12 per unit.
+- [x] Add tenant-scoped authentication and a tenant interface that exposes only the tenant’s own room, rent, and electricity information.
+- [x] Update the private GitHub repository and release checkpoint after the custom authentication revision.
+- [x] Remove or disable all remaining OAuth and alternative authentication routes so phone-number/password is the only available sign-in method.
+- [x] Enable and verify the published daily overdue-rent alert schedule.
+- [x] Expand the Manager workspace with role-scoped operational shortcuts, collection follow-up, tenant allocation and move-out control, room availability, billing, expense, reminder, and export workflows.
+- [x] Add a Manager-focused dashboard that highlights today’s tasks, pending or overdue rent, vacant beds, and recent building activity.
+- [x] Add Manager quick actions for expenses, reminders, and exports, plus an explicit vacant-bed and recent-activity dashboard panel.
+- [x] Grant Managers delegated Owner-equivalent access to Team administration and system configuration controls.
+- [x] Allow Managers to create buildings and automatically retain management access to each building they create, including Team administration.
+- [x] Allow Managers to edit assigned building details, rooms and room type, tenant records and allocations, rent records, and electricity bills with full delegated application access.
+- [x] Grant Managers full Owner-equivalent access, including building creation, settings, team membership, and role administration.
+- [x] Grant Managers global building visibility and management access equivalent to the Owner across all existing buildings.
+- [x] Remove any remaining api.manus.im dependency from the phone-number/password authentication path and verify that mobile sign-in works without external Manus host resolution.
+- [x] Store the user-provided Supabase URL, publishable key, secret key, and JWKS URL through secure project variables.
+- [x] Validate the supplied Supabase credentials with a lightweight authenticated endpoint.
+- [x] Decide and document whether Supabase is used as the primary or hybrid database after validation.
+- [x] Add automated tenant-linked rent-due reminder creation, including rentPaymentId usage and recurring due-date handling.
+- [x] Fully disable legacy OAuth callback and related login routes so phone/password is the only exposed sign-in path.
+- [x] Isolate scheduled-task authentication from normal phone-password authentication and document the remaining cron-only dependency.
+- [x] Add regression tests for tenant-linked reminder generation and legacy OAuth route rejection.
+- [x] Verify phone-password sign-in on a mobile viewport after the authentication cleanup.
+- [x] Add explicit project documentation stating that external scheduled authentication is cron-only and normal users use phone/password sessions.
+- [x] Execute and record a real phone-password login and post-login redirect verification at a mobile viewport.
+- [x] Add Manager building deletion with confirmation, access checks, and safe blocking when operational records exist.
+- [x] Add Manager room deletion with confirmation, access checks, and safe blocking when allocations or billing records exist.
+- [x] Add Manager building cards with shareable property details and quick operational actions.
+- [x] Add remaining Golden.pdf operational fields and workflows for room service charges, tenant documents, credentials revocation, and expense/profit visibility where supported by the current schema.
+- [x] Add tenant document URL management and tenant credential revocation from the Manager tenant workflow.
+- [x] Add supported recurring service-charge tracking and net operating result visibility using existing expense and rent data.
+- [x] Add procedure-level tests for Manager building and room create/update/delete operations and protected-delete conflicts.
+- [x] Verify authenticated Manager building and room workflows at a mobile viewport.
+- [x] Add complete regression tests for Manager building and room create/update/delete authorization and deletion safety.
+- [x] Verify Manager building and room workflows on mobile browser layouts with an authenticated Manager session.
+- [x] Add router/service regression tests that exercise Manager-authorized building and room create/update/delete operations, forbidden tenant access, and protected-delete conflict responses.
+- [x] Add service-level regression tests proving Manager building and room access is allowed while tenant destructive access is forbidden.
+- [x] Add safe Manager floor deletion when no rooms are assigned to the floor.
+- [x] Implement and test a concrete room/service-charge workflow from Golden.pdf, or document why a specific item is unsupported by the current schema.
+- [x] Add real router/service tests for Manager building and room create/update/delete success paths, tenant-forbidden access, and protected-delete conflict responses.
+- [x] Perform and record mobile verification using an authenticated Manager session on both Buildings and Rooms screens.
+- [x] Implement recurring building service charges with a schema, Manager procedure, selected-building UI, and net-result inclusion.
+- [x] Add executable tRPC tests for building update/delete success and protected conflicts, plus room delete success.
+- [x] Re-check all Manager regression-test items after complete building and room procedure coverage.
+- [x] Add safe Manager tenant deletion with active-allocation, rent, electricity, and reminder record protection.
+- [x] Add an explicit archive/offboard tenant action that revokes credentials and preserves financial history.
+- [x] Correct the dashboard financial formula and labels so expected, collected, outstanding, expenses, electricity, and service charges are not conflated.
+- [x] Verify electricity-history deletion protection and dashboard electricity billing treatment before marking the financial audit complete.
+- [x] Restore a reachable Manager financial dashboard route while retaining building-first login and workspace selection.
+- [x] Pre-fill and validate monthly rent records from the tenant allocation amount to prevent manual calculation errors.
+- [x] Add tenant-level tiffin and water-bottle service charges with selected-building billing visibility.
+- [x] Add Golden.pdf gap regression tests for tenant offboarding/deletion protection and financial aggregation.
+- [x] Verify the repaired tenant and billing workflows as a Manager on a true mobile viewport.
+- [x] Capture authenticated Manager mobile evidence for the Tenant route showing add, service, offboard, and protected-delete controls.
+- [x] Capture authenticated Manager mobile evidence for the Billing route showing allocation-driven expected rent and electricity controls.
+- [x] Re-audit Golden.pdf against the current Manager building-selection flow across all operational screens.
+- [x] Implement and verify any newly confirmed Golden.pdf feature gaps end to end.
+- [x] Add editable building contact, landmark, photo URL, map URL, and Manager cut percentage fields to building profiles and sharing.
+- [x] Add a shareable building Manager QR-code workflow within the selected-building workspace.
+- [x] Add room air-conditioning classification and show it in Manager room cards and tenant details.
+- [x] Add electricity collection status, payment date, receipt URL, and overdue reminder support.
+- [x] Extend selected-building profit calculations to include configurable Manager cut and clearly separate collections from projected amounts.
+- [x] Add regression tests and true mobile verification for the newly added Golden.pdf profile, QR, room, electricity, and profit workflows.
+- [x] Fix selected-building persistence when the Manager navigates between operational screens.
+- [x] Verify the Manager building-selection flow on Tenants, Expenses, Reminders, Exports, and Settings with authenticated evidence.
+- [x] Exercise the overdue electricity reminder workflow end to end and record verification evidence.
+- [x] Complete authenticated 390×844 mobile verification for building profile and QR, room AC, electricity collection and reminder, and dashboard Manager-cut workflows.
+- [x] Align the Settings role-scope copy with the implemented Manager Owner-delegate access model.
+- [x] Capture authenticated 390×844 verification of the building profile fields in the selected-building workspace.
+- [x] Capture authenticated 390×844 verification of the overdue electricity reminder action and reminder visibility.
+- [x] Audit current Manager and tenant operational workflows for runtime defects, stale data, and blocked actions.
+- [x] Fix confirmed high-impact workflow defects uncovered by the audit.
+- [x] Add practical Manager productivity improvements for selected-building operations.
+- [x] Add regression tests and mobile verification for the newly fixed and enhanced workflows.
+- [x] Automatically resolve an active electricity reminder when its bill is fully paid.
+- [x] Add a share-ready tenant access and payment-reminder message workflow for Managers.
+- [x] Add Building Manager contact and QR-code access to the tenant portal.
+- [x] Add expense payment-reference and receipt-link tracking to support bill and payment records.
+- [x] Add automated regression coverage for tenant access sharing, reminder message sharing, and tenant portal Manager QR/contact presentation.
+- [x] Reproduce and diagnose Owner, Manager, and Tenant operation failures in authenticated sessions.
+- [x] Restore missing role-specific operation access and error handling.
+- [x] Add cross-role regression coverage and mobile verification for repaired operations.
+- [x] Restore Shashank’s configured electricity record for active Room 302 so the Tenant portal displays the expected billing data.
+- [x] Add a safe tenant self-service operation for contacting the Building Manager without exposing management controls.
+- [x] Exercise successful Owner and Manager mutation submissions after role login, not only form availability.
+- [x] Add automated regression coverage for Owner building updates, Manager follow-up completion, and active-room tenant electricity visibility.
+- [x] Reproduce and fix the Room edit control and submission flow.
+- [x] Redesign Rooms and related operation forms for touch-first mobile responsiveness.
+- [x] Add room photo URL and balcony or non-balcony classification to room details and tenant views.
+- [x] Add a manual rent-due reminder trigger with idempotent follow-up creation.
+- [x] Add rent and electricity payment history, receipt image links, and meter-reading image links to Manager billing workflows.
+- [x] Add editable Manager payment bank details and QR payment image references that appear in the Tenant payment interface.
+- [x] Add Tenant payment guidance, payment receipt submission, and other self-service billing actions.
+- [x] Add regression tests and authenticated mobile verification for the repaired Room edit and expanded payment workflows.
+- [x] Show the assigned room photo and balcony classification in the Tenant portal.
+- [x] Add an explicit Tenant payment-review follow-up action alongside receipt submission.
+- [x] Superseded by the confirmed free WhatsApp-only workflow: no provider-backed WhatsApp or SMS delivery is configured.
+- [x] Superseded by the confirmed free WhatsApp-only workflow: no external delivery audit is possible without a provider callback.
+- [x] Superseded by the confirmed free WhatsApp-only workflow: reminders are prepared for Manager review rather than sent automatically.
+- [x] Superseded by the confirmed free WhatsApp-only workflow: delivery status and retry require a paid provider integration.
+- [x] Superseded by the confirmed free WhatsApp-only workflow: paid WhatsApp and SMS delivery verification is not applicable.
+- [x] Evaluate and document a zero-provider-fee reminder sharing path alongside paid WhatsApp and SMS automation.
+- [x] Build a free WhatsApp-only Manager-send reminder action with a prefilled tenant-specific rent-due message.
+- [x] Add test coverage and authenticated mobile verification for the free WhatsApp reminder action.
+- [x] Add a focused regression test for the pending-rent WhatsApp reminder link contract used by Billing.
+- [x] Capture mobile evidence for an Open WhatsApp rent-reminder control without changing production tenant payment records.
+- [x] Document the free manual-send versus paid automatic-delivery decision in the project.
+- [x] Capture explicit DOM text confirmation of the non-persistent pending-rent Open WhatsApp control at mobile width.
+- [x] Superseded by the corrected Manager-controlled staff-cost model: Helper and Cook are operational cost categories, not staff-login interfaces.
+- [x] Verify concurrent Manager and Tenant sessions for separate login, routing, selected-building refresh, authorization boundaries, and automated CRUD or stale-write safeguards without creating artificial production records.
+- [x] Validate end-to-end rent, electricity, expenses, services, profit, reminders, receipts, and payment workflows with calculation assertions.
+- [x] Repair each confirmed end-to-end defect and add regression coverage.
+- [x] Superseded by the corrected release scope; the Manager operational workspace has its own final mobile verification item below.
+- [x] Add safe active-screen refresh behavior so concurrent Manager, Owner, Helper, Cook, and Tenant sessions receive updated operational data without manual reloads.
+- [x] Enforce selected-building ownership when vacating an allocation and add a regression test for cross-building attempts.
+- [x] Prevent concurrent allocation requests from overfilling a room or assigning one tenant twice.
+- [x] Make rent reminder synchronization idempotent under simultaneous Manager or automated reminder triggers.
+- [x] Re-run mobile screen verification sequentially after correcting the concurrent navigation flaw in the audit harness.
+- [x] Superseded and removed: staff-account onboarding is not part of the corrected PG operating model.
+- [x] Superseded by the corrected no-staff-login model: operational costs are Manager-controlled.
+- [x] Keep a tenant's phone-password login identifier synchronized when a Manager edits the tenant mobile number.
+- [x] Prevent concurrent Manager billing edits from silently overwriting a newer rent or electricity record.
+- [x] Re-run the Manager route audit with readiness-based waits after a transient post-repair navigation timing failure.
+- [x] Superseded by the corrected no-staff-login model; no artificial Helper or Cook accounts are created.
+- [x] Add a negative cross-building allocation-vacate regression that proves no allocation is changed.
+- [x] Verify stale-write prevention and selected-building isolation through concurrent sessions, procedure rejection tests, and transaction safeguards without altering production business records.
+- [x] Superseded by the corrected no-staff-login model; the remaining final check is the Manager operations phone layout.
+- [x] Remove the mistaken Helper and Cook account-onboarding interface and related staff-login workflow.
+- [x] Add Manager-controlled staff cost records for helper and kitchen wages, advances, and settlements.
+- [x] Add Manager-controlled purchase and vendor records for groceries, utensils, gas, cleaning, and recurring operating supplies.
+- [x] Add maintenance work-order tracking for repairs, vendors, costs, status, and completion follow-up.
+- [x] Expand the financial view with operating-cost categories, payable summaries, and building-level profitability insight.
+- [x] Verify the corrected Manager operational workflow against Golden.pdf on mobile and publish the release.
+- [x] Repair the Expenses workspace hook-order failure introduced by the operating-cost summary and add a regression check.
+- [x] Create monthly pending rent records automatically from each active tenant allocation with idempotent due-date and amount calculation.
+- [x] Add Manager in-app notifications for newly generated rent dues, upcoming rent or electricity due dates, and overdue balances.
+- [x] Show current monthly rent, paid, pending, electricity, and total payable amounts in the Manager collection workspace.
+- [x] Add scheduled collection automation and regression coverage for generation, notification de-duplication, calculations, and mobile workflows.
+- [x] Audit and remove seeded mock expense, rent, electricity, reminder, and notification records while preserving application configuration and user access.
+- [x] Add room and optional tenant assignment to operational expenses, with explicit shared versus assigned-tenant liability.
+- [x] Calculate room-sharing rent and electricity obligations per active occupant while retaining full liability for tenant-assigned costs.
+- [x] Repair the rent and electricity Manager screens for fresh-data operations, assignment visibility, and accurate collection totals.
+- [x] Add regression tests, Manager workflow verification, and publish the fresh-data shared-billing release.
+- [x] Fix shared-room tenant allocation so a Manager can assign residents up to the room capacity and calculate their equal shares.
+- [x] Add regression and Manager workflow verification for double-sharing room allocation without seeded data.
+- [x] Store and calculate each shared-room tenant’s individually agreed monthly rent, with the room total derived as the sum of active tenant rents.
+- [x] Add four-sharing as a room type with an enforced four-resident capacity.
+- [x] Keep electricity and room-shared expense charges divided equally across all active room occupants, regardless of each tenant’s rent.
+- [x] Update Manager rent, room, tenant, and billing screens plus regression coverage for unequal shared rents and four-sharing rooms.
+- [x] Add a clear room-card occupancy indicator showing filled and available beds for every sharing type.
+- [x] Add a clear room-card occupancy indicator showing filled and available beds for every sharing type.
+- [x] Add a mobile-friendly tenant-list filter for single, double, triple, and four-sharing room allocations.
+- [x] Add a Vacant Only room-dashboard filter that includes rooms with one or more available beds.
+- [x] Add a tenant search that matches name, room number, or phone number alongside room-type filters.
+- [x] Add monthly dashboard totals for tenants, rent expected/collected/pending, electricity billed/collected/pending, expenses, credit, profit, and room occupancy.
+- [x] Add a yearly dashboard view with the same period-aware financial and occupancy metrics.
+- [x] Add actionable Manager insights for overdue collections, open beds, and operational spend or payable attention.
+- [x] Add dashboard calculation regression coverage and publish the monthly/yearly reporting release.
+- [x] Add a Manager dashboard month and year picker for validated historical monthly and yearly reporting.
+- [x] Add regression coverage and publish the historical dashboard reporting picker.
+- [x] Add secure period-aware dashboard metric drill-down data for tenants, collections, electricity, expenses, credit, profit, and occupancy.
+- [x] Make dashboard metric cards clickable with a mobile-friendly detail panel that lists the records behind each figure.
+- [x] Add metric drill-down regression coverage and publish the dashboard interaction update.
+- [x] Add direct payment actions to pending rent and electricity dashboard detail rows with selected-record context.
+- [x] Add regression coverage and publish the dashboard direct-settlement update.
+- [x] Add half-balance, full-balance, and custom amount presets to rent and electricity settlement editors.
+- [x] Add regression coverage and publish the partial-payment preset update.
+- [x] Persist Cash, UPI, and Bank Transfer payment method selection for rent, electricity, and tenant-share settlements.
+- [x] Add Manager and Tenant receipt-image upload and proof visibility for payment submissions.
+- [x] Add regression coverage and publish the payment-method and receipt-proof release.
+- [x] Add receipt-proof review status, Manager decision metadata, and an additive database migration.
+- [x] Add Manager-only receipt approval or rejection procedures with building and record isolation.
+- [x] Show Tenant receipt-review status and add a mobile Manager review queue with proof preview.
+- [x] Add regression coverage, validate the workflow, and publish the receipt-review release.
+- [x] Require a non-empty Manager rejection note in receipt-review validation, UI controls, and regression tests.
+- [x] Add a building-scoped receipt-review audit history query for approved and rejected Tenant proof.
+- [x] Build a mobile Manager audit history screen with status filters, proof links, reviewers, timestamps, and notes.
+- [x] Add regression coverage, validate, and publish the receipt-review audit history release.
+- [x] Add validated building-scoped date-range and tenant filters to the receipt-review audit query.
+- [x] Add mobile date-range and tenant controls to the Manager receipt-review audit history screen.
+- [x] Add regression coverage, validate, and publish the filtered audit-history release.
+- [x] Add one-tap saved review-period presets to the Manager receipt-review audit filters.
+- [x] Add regression coverage, validate, and publish the review-period preset release.
+- [x] Add validated payment-method and amount-range filters to the receipt-review audit query.
+- [x] Add mobile payment-method and amount filter controls to the Manager audit history screen.
+- [x] Add regression coverage, validate, and publish the enhanced audit-filter release.
+- [x] Add a validated building-scoped reviewer filter to the receipt-review audit query.
+- [x] Add a mobile reviewer selector to the Manager receipt-review audit history screen.
+- [x] Add regression coverage, validate, and publish the reviewer-filter release.
+- [x] Diagnose and repair Tenant allocation and Tenant or Room edit workflow failures.
+- [x] Add a Room workspace action to allocate an existing tenant directly to that room.
+- [x] Add a streamlined room setup flow for room creation, tenant profile, allocation, agreed rent, and optional services.
+- [x] Add regression coverage, mobile verification, and publish the Tenant and Room workflow release.
+- [x] Add safe active-tenant room transfer persistence with capacity, history, and rent-total safeguards.
+- [x] Add a mobile Tenant transfer action with destination room, rent, bed, and effective-date controls.
+- [x] Add regression coverage, validate, and publish the tenant transfer release.
+- [x] Define optional mid-month source and destination rent proration rules with auditable transfer adjustments.
+- [x] Add transfer controls to preview and apply prorated rent adjustments from the effective date.
+- [x] Add regression coverage, validate, and publish the prorated transfer release.
+- [x] Add a live rupee preview for source and destination rent proration in the room-transfer form.
+- [x] Add regression coverage, validate, and publish the transfer proration preview release.
+- [x] Add a building-scoped Tenant transfer history query with prior and destination rooms plus proration details.
+- [x] Add a mobile Tenant profile transfer timeline showing room moves and associated rent adjustments.
+- [x] Add regression coverage, validate, and publish the Tenant transfer-history release.
+- [x] Audit all Manager, Owner, and Tenant core workflows for verified functional issues and duplicate controls.
+- [x] Repair verified workflow defects and remove redundant controls without changing fresh operational data.
+- [x] Improve mobile responsiveness, loading or transition behavior, accessibility focus states, and reduced-motion support.
+- [x] Expand regression coverage, validate critical flows, and publish the application quality pass.
+- [x] Add installable PWA metadata, icons, and application manifest.
+- [x] Add a safe service worker with offline fallback and conservative asset caching.
+- [x] Register the PWA client behavior and surface a clear update-ready experience.
+- [x] Add PWA regression coverage, validate the production output, and publish the release.
+- [x] Persist the latest successfully loaded building workspace data in a user-scoped offline snapshot.
+- [x] Render a clearly labelled read-only offline workspace from the saved snapshot without enabling mutations.
+- [x] Add regression coverage and validate snapshot isolation, offline fallback, and online refresh behavior.
+- [x] Show the saved snapshot’s human-readable age and last-synchronized timestamp in offline views.
+- [x] Escalate stale offline snapshots with an accessible warning that advises reconnecting before acting.
+- [x] Add snapshot-age regression coverage, validate mobile rendering and production output, then publish the release.
+- [x] Automatically refresh the latest user-scoped snapshot and return to live data when connectivity is restored.
+- [x] Add reconnection-refresh regression coverage and validate the online transition before publication.
+- [x] Define a uniquely identifiable temporary building dataset and verify its cleanup scope before end-to-end testing.
+- [x] Run all automated contracts, integrity checks, role/permission checks, and route-level interface audits.
+- [x] Exercise Owner, Manager, and Tenant workflows against the isolated dataset, including payments, receipts, reminders, expenses, and transfers.
+- [x] Verify concurrent-session updates and active-screen live refresh with isolated multi-user actions.
+- [x] Inspect mobile and desktop screens for runtime errors, clipping, duplicate controls, and inaccessible interactions; repair verified defects with regressions.
+- [x] Remove all temporary records and verify the isolated dataset is fully absent before publishing the audit release.
+- [x] Repair the tenant rent-receipt submission conflict when an existing rent reminder already occupies the one-reminder record, then add a regression test.
+- [x] Define independent expected values for rent collection, electricity, shared and assigned charges, expenses, profit, occupancy, and dashboard reporting periods.
+- [x] Reconcile Manager and Owner dashboard totals and insight messages against an isolated controlled calculation dataset.
+- [x] Verify tenant-visible balances and shared-charge splits against the same controlled records.
+- [x] Repair any verified calculation or insight mismatch with focused automated regression coverage.
+- [x] Remove the complete calculation-audit dataset and verify no temporary accounts or records remain.
+- [x] Include paid and expected non-electricity tenant-charge recoveries in cash and projected operating results, respectively, with reconciling metric details.
+- [x] Add an insight for pending non-electricity tenant charges so the on-track state cannot mask open recoverable balances.
+- [x] Diagnose the reported live application loading failure using current deployment, server, and browser evidence.
+- [x] Repair the verified loading issue and restart affected application services.
+- [x] Validate the live login route, development preview, and current logs before publishing the repair.
+- [x] Audit scheduled and manual reminder-delivery paths to identify any notification sent solely because a due date elapsed.
+- [x] Require an explicit Manager-created or Manager-triggered reminder before tenant overdue delivery is eligible.
+- [x] Add regression coverage for no automatic delivery from stale due dates and successful delivery after explicit triggering.
+- [x] Persist an explicit reminder-delivery request marker so scheduled delivery cannot infer consent from automatically created reminders.
+- [x] Reproduce and repair failed allocation of tenants into single and shared rooms, including double sharing capacity behavior.
+- [x] Reproduce and repair non-functional tenant edit actions, preserving profile and active allocation updates.
+- [x] Reproduce and repair tenant phone-password login, then verify the tenant portal after successful authentication.
+- [x] Add regression coverage and validate tenant allocation, editing, and login flows through the affected mobile interfaces.
+- [x] Repair persisted room capacities that conflict with their configured sharing type, including the current double-sharing room.
+- [x] Restore the configured tenant phone-password credential and add Manager-authorized credential reset support in tenant editing.
+- [x] Correct the tenant portal room card to show the configured sharing type when no bed label is assigned.
+- [x] Reproduce and repair the non-functional tenant and room edit actions reported after the latest release.
+- [x] Reproduce and repair Manager rent-status updates for tenant rent records.
+- [x] Add room-wise and tenant-wise billing status visibility for pending, paid, due, and credit amounts.
+- [x] Add regression coverage and mobile validation for edited tenant data, rent status, and room or tenant billing status.
+- [x] Add a dedicated room meter-reading entry section that calculates and saves electricity bills.
+- [x] Automatically refresh room-wise and tenant-wise electricity collection status after a meter reading is saved.
+- [x] Add regression coverage and mobile validation for meter-reading-to-bill status updates.
+- [x] Add an optional electricity-meter photo upload directly in the meter-reading entry form.
+- [x] Persist the uploaded meter photo with the calculated electricity bill and add regression coverage.
+- [x] Validate meter-photo attachment and bill-status refresh through the Manager workflow.
+- [x] Reproduce and verify the configured tenant phone-password login on development and published environments.
+- [x] Audit the shared attachment endpoint and verify Manager image upload and storage URL delivery end to end.
+- [x] Show an uploaded electricity-meter photo directly in the tenant's electricity bill history.
+- [x] Push the complete verified repository state to the configured GitHub repository.
+- [x] Inspect Supabase configuration and document a safe, production-ready migration plan from the current database.
+- [x] Cancel the staged MySQL-to-Supabase PostgreSQL cutover after the user elected to retain TiDB Cloud Starter.
+- [x] Keep TiDB Cloud Starter as the production database and cancel the planned Supabase runtime cutover.
+- [x] Verify Owner, Manager, and Tenant phone-password sign-in while retaining TiDB Cloud Starter.
+- [x] Add regression coverage and verify Owner, Manager, and Tenant phone-password sign-in on rendered application sessions.
+- [x] Provide safe PingCAP support recovery guidance for TiDB Cloud console ownership without exposing account or database credentials.
+- [x] Audit primary Owner, Manager, and Tenant workflows with authenticated role sessions, prioritizing Billing edit actions and rent-status updates.
+- [x] Reproduce and repair the reported non-functional Billing edit action and Manager rent-status updates.
+- [x] Ensure tenant portal billing shows all tenant-applicable rent, allocated electricity, allocated services, and allocated expenses.
+- [x] Reconcile and repair rent, shared-electricity, tenant-specific service, and allocated-expense calculations for individual and sharing rooms.
+- [x] Add regression coverage and mobile validation for all confirmed cross-role workflow and calculation repairs.
+- [x] Push the verified role, billing, tenant visibility, and calculation audit repair to GitHub.
+- [x] Run an isolated Owner, Manager, and Tenant end-to-end audit of critical create, edit, update, and deletion safeguards.
+- [x] Verify shared image uploads, meter evidence, and tenant receipt submission with reachable stored URLs.
+- [x] Verify configured and newly created tenant phone-password accounts, scoped portal access, and credential reset behavior.
+- [x] Verify multi-session data refresh, concurrent allocation protection, and cross-role response consistency.
+- [x] Remove all isolated audit records and add regression coverage for any confirmed repairs.
+- [x] Repair persisted image-field validation so managed `/manus-storage/` URLs work for building, room, meter, receipt, and QR upload workflows.
+- [x] Create a dedicated Manager collections workspace for rent, electricity, service, and expense status updates with payment details and notes.
+- [x] Limit building share links and QR content to public property identity, address, landmark, map location, logo, and contact details without financial or billing data.
+- [x] Add Manager payment-receiving settings for QR images and bank, UPI, cash, and cheque collection details shown only to relevant tenant payment views.
+- [x] Add Individual and Co-living room types with explicit Manager-controlled allocation and bill-splitting rules.
+- [x] Create a dedicated vacant-room workspace with available capacity, filters, and direct Manager allocation actions.
+- [x] Create a dedicated Manager profit workspace with monthly financial summaries and a manager-entered Owner monthly cut or settlement entry.
+- [x] Restrict Owner navigation and API responses to building details, room and vacancy counts, tenant counts, approved financial summary metrics, upcoming building payments, and payment history.
+- [x] Remove duplicate or role-inappropriate navigation and controls after the new dedicated workspaces are in place.
+- [x] Add schema, API, permission, calculation, and rendered workflow regression coverage for the redesigned role experiences.
+- [x] Reproduce and repair the reported Building Manager phone-password sign-in failure without disrupting Owner or Tenant access; the configured published Manager login succeeded, so no credential or code change was required.
+- [x] Replace percentage-based Owner settlement inputs with an explicit monthly Owner cut amount while retaining auditable payment history.
+- [x] Add Manager Owner-settlement payment proof upload, status updates, edit, delete, and direct mark-paid controls.
+- [x] Add building-level rent and electricity collection summaries showing total billed, collected, pending, tenant and room detail, and government electricity payment status.
+- [x] Add safe edit, delete, and direct mark-paid controls to applicable due and expense records without corrupting historical calculations.
+- [x] Reconcile and regression-test Manager credit, Owner due, rent collection, electricity collection, and settlement payment calculations.
+- [x] Display configured Manager bank and QR payment details in the Tenant payment interface.
+- [x] Add Owner-to-Manager due reminders, payment-status updates, and Manager-credit update controls with auditable history.
+- [x] Add Owner occupancy drill-down details for rooms, vacancies, floors, room types, and assigned tenant contact details.
+- [x] Reproduce and repair the reported production-wide Owner, Manager, and Tenant phone-password sign-in failure; all three configured production accounts signed in successfully, so no credential or code change was required.
+- [x] Repeat and document production Owner, Manager, and Tenant sign-in checks plus Owner, Vacancies, Profit, and tenant payment-interface verification.
+- [x] Refresh the published release because the production Owner interface still shows the prior workspace instead of the latest checkpoint implementation.
+- [x] Replace the remaining Settings and Building-form percentage Owner-cut labels and inputs with fixed monthly Owner-cut amount controls.
+- [x] Replace the stale percentage-based Owner-share summary displayed on Manager Building cards with the fixed monthly Owner cut.
+- [x] Audit and correct Owner financial calculations, replacing collection labels as requested and removing non-required Owner profit-due and Manager-credit cards.
+- [x] Add safe Manager record-management controls for eligible bills, payments, expenses, and other financial entries, with auditable deletion protection.
+- [x] Add self-service phone-number and password updates for authenticated Owner and Manager accounts with secure credential validation.
+- [x] Add Manager-authorized account recovery administration without exposing other users' current passwords or password hashes.
+- [x] Add building-owner assignment and Owner account creation or linking during building setup, scoped to assigned buildings only.
+- [x] Enforce and regression-test strict building-scoped accounting, rooms, tenants, owner visibility, and concurrent-update isolation for multi-building operations.
+- [x] Document durable backup and data-recovery safeguards for the production data model and verify the revised role workflows in production.
+- [x] Add a Manager building-level monthly electricity bill entry with a connected total-bill insight and reconciliation workflow.
+- [x] Restrict the Owner interface to approved occupancy and total monthly building-expense information, removing Manager-controlled financial detail cards.
+- [x] Complete visible deletion controls across Collections, Expenses, and Billing and ensure eligible deletions remove dependent history and financial totals safely.
+- [x] Reconcile duplicate rent and electricity records and strengthen uniqueness and calculation safeguards for future entries.
+- [x] Replace the remaining percentage-based Owner-share wording in the Manager dashboard projected-profit card with fixed-cut language.
+- [x] Add explicit confirmation dialogs and a Manager-safe undo path for eligible deleted financial and operational entries.
+- [x] Force-push the latest Golden Prime PG source state to the selected GitHub repository.
+- [x] Check the selected GitHub repository’s latest Actions and deployment status; GitHub Actions and Deployments APIs are unavailable to the current integration token (HTTP 403).
+- [x] Calculate Manager credit from only unpaid tenant bill balances, excluding fully settled tenant payments and updating all Manager credit sections.
+- [x] Create a dedicated Manager Export & Filters workspace for selected and complete building-scoped Excel exports, move existing export filters there, and exclude passwords, hashes, and secrets.
+- [x] Highlight Manager-dashboard tenant rows with outstanding credit balances in red while retaining balance amounts and payment actions.
+- [x] Add overdue-day badges, tenant-specific WhatsApp reminder actions, and safe quick payment shortcuts to Manager dashboard credit-watch rows.
+- [x] Audit the full Manager, Owner, and Tenant application; repair verified defects or incomplete flows; and improve mobile responsiveness and purposeful motion.
+- [x] Add a persistent configurable motion-intensity control in user settings while preserving system reduced-motion support.
+- [x] Add Owner and Tenant motion-preference controls and a persistent compact-density setting for Manager tables and cards.
+- [x] Apply Manager compact density directly to Billing and Export & Filters financial record surfaces.
+- [x] Add a compact Billing pending-receipt review queue and customizable export-preview field controls before workbook download.
+- [x] Push the latest Golden Prime PG project state to the selected GitHub repository.
+- [x] Assess and safely migrate Golden Prime PG from TiDB to the connected Supabase project without exposing credentials or risking production data loss.
+- [x] Verify TiDB source and Supabase target schema, access, row-count baseline, and critical integrity invariants without changing either database.
+- [x] Document the PostgreSQL compatibility map, reversible transfer design, checksums, and final-cutover rollback plan.
+- [x] Create and validate a separate PostgreSQL schema and migration path without modifying the TiDB production runtime.
+- [x] Perform an idempotent target data dry run and reconcile row counts, foreign-key integrity, financial totals, and role-scoped access.
+- [x] Adapt the application data layer for PostgreSQL and complete full role, PWA, type, build, and regression validation.
+- [x] Execute a deliberate, reversible production cutover only after the target has passed validation and the user confirms the change window.
+- [x] Add a safe Owner-payment deletion action that updates financial history and calculations correctly.
+- [x] Repair image uploads across the application, including a Building profile-picture upload control.
+- [x] Perform a complete Manager, Owner, and Tenant end-to-end release audit covering all screens, critical actions, uploads, calculations, mobile layouts, and error paths.
+- [x] Deploy the validated application to the user-connected Vercel project and verify the deployment outcome.
+- [x] Diagnose and repair failed Building image, profile photo, meter, QR, receipt, and other image uploads using a secured Supabase Storage bucket.
+- [x] Verify Supabase PostgreSQL schema, migrated TiDB data, calculations, data sharing, and all Manager, Owner, and Tenant workflows for runtime errors.
+
+- [x] Add upload progress bars and loading animations to all image upload interfaces
+- [x] Add regression tests for upload progress and loading states
+- [x] Verify responsive upload feedback and publish the enhancement
+
+- [x] Add cancel and retry controls to all image upload interfaces
+- [x] Add regression tests for upload cancellation and retry recovery
+- [x] Verify responsive upload recovery and publish the enhancement
+
+- [x] Add cancel and retry controls to all image upload interfaces
+- [x] Add professional loaders for image upload and refresh operations
+- [x] Add regression tests for upload cancellation, retry, and operation loaders
+- [x] Verify responsive feedback and publish the combined enhancement
+
+- [x] Add automatic floor generation for Ground Floor, numbered floors, and Terrace
+- [x] Add duplicate-safe floor-generation validation and regression tests
+- [x] Verify mobile floor setup and publish the floor-generation update
+
+- [x] Audit active database selector and TiDB fallback references
+- [x] Verify Supabase PostgreSQL tables, schemas, functions, rules, data, and financial invariants
+- [x] Verify Supabase Storage privacy, policies, runtime role isolation, and production connectivity
+- [x] Record exact migration status and any remaining rollback components
+
+- [x] Create and verify a Supabase-only retirement baseline without deleting remote TiDB data
+- [x] Remove inactive TiDB/MySQL adapter, mysql2 dependency, DATABASE_URL fallback, and rollback-only references from application code
+- [x] Define and apply appropriate Supabase RLS/storage policy hardening for the server-only architecture
+- [x] Re-run full application, migration, role, storage, and production connectivity validation
+- [x] Document the retirement decision and publish the Supabase-only release
+
+- [x] Enforce zero TiDB/MySQL usage: Supabase PostgreSQL must be the only runtime and supported migration path
+
+- [x] Inventory and preserve the existing Building Manager profile while identifying all operational records for reset
+- [x] Create a non-destructive schema, policy, SQL, and setup guide in stepguide.md without exposing secrets
+- [x] Obtain explicit confirmation before executing the destructive Supabase operational-data reset
+- [x] Reset operational data transaction-safely while preserving the Building Manager profile
+- [x] Verify clean Supabase state, manager login, application behavior, and portable delivery documentation
+- [x] Checkpoint the clean delivery release
+
+- [x] Improve empty dashboard states with clear create-building call-to-action buttons
+- [x] Add interactive Manager onboarding for first building and automatic floors
+- [x] Inventory and clean private Supabase Storage objects after explicit confirmation
+- [x] Verify UI receipt upload and private bucket policy behavior
+- [x] Run comprehensive profit, expense, rent, and bill calculation checks
+- [x] Test authentication end-to-end with isolated temporary owner data and remove test artifacts
+- [x] Document results and checkpoint the delivery validation update
+
+- [x] Run a bounded multi-device authenticated sync/load test with zero production financial writes
+- [x] Verify the first-building empty-state and onboarding flow on mobile and desktop
+- [x] Verify receipt upload behavior and private Storage policy status without leaving test artifacts
+- [x] Run comprehensive calculation and authentication regression checks
+- [x] Prepare and publish a production test-results presentation deck
+
+- [x] Add Manager dashboard analytics widget for current occupancy rate and revenue
+- [x] Add Manager CSV export for tenant and room data with safe building scoping
+- [x] Run re-authenticated multi-user real-time load test using a permanent test Manager token and verify protected workspace routes
+- [x] Export complete Supabase migration SQL and Storage bucket policies for handoff and local backup
+- [x] Add regression tests, validate mobile/desktop behavior, and checkpoint the enhancement release
+
+- [x] Fix concurrent protected-route HTTP 401 failures during authenticated multi-user testing
+- [x] Fix concurrent protected-route HTTP 500 failures and preserve actionable server errors
+- [x] Fix production storage-proxy 502 responses for missing PWA and building image objects
+- [x] Re-run concurrency benchmark and production storage-proxy validation
+- [x] Add regression coverage, update release documentation, and checkpoint the fix
+
+- [x] Repair rent, electricity, expense, and collection payment-status updates with database-wide recalculation consistency
+- [x] Fix optimistic-concurrency conflicts so stale rent records offer a safe refresh/review/retry flow
+- [x] Add calendar month/year selection for billing and support historical rent, bill, and expense entries
+- [x] Unify Billing actions with category-aware Rent, Electricity, and Other Expense entry forms
+- [x] Add user-friendly past-entry editing and status management across Billing and Collections
+- [x] Add regression coverage, responsive UI validation, calculation reconciliation, and checkpoint the release

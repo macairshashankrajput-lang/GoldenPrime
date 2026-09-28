@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-08-26T17:23:26.744Z",
+  "bucket": {
+    "id": "golden-prime-images",
+    "name": "golden-prime-images",
+    "public": false,
+    "file_size_limit": "5242880",
+    "allowed_mime_types": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ]
+  },
+  "storageObjectPolicies": [],
+  "databasePolicyFile": "policies.sql",
+  "completeSqlFile": "complete-migration.sql",
+  "storagePolicyFile": "storage-policies.sql",
+  "runtimePosture": "server-mediated access with private bucket and no direct browser Data API access"
+}

@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "title": "Golden Prime PG",
+    "created": 1787764162.962,
+    "last_updated": 1787764294.31,
+    "total_slides": 12
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "ready",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "operating_loop",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "onboarding",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "financial_logic",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "proof_payments",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "role_boundaries",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "reliability",
+      "state": "edited",
+      "pageNum": 8
+    },
+    {
+      "id": "load_test",
+      "state": "edited",
+      "pageNum": 9
+    },
+    {
+      "id": "vercel_routing",
+      "state": "edited",
+      "pageNum": 10
+    },
+    {
+      "id": "handoff",
+      "state": "edited",
+      "pageNum": 11
+    },
+    {
+      "id": "recommendation",
+      "state": "edited",
+      "pageNum": 12
+    }
+  ],
+  "outline": [
+    {
+      "id": "cover",
+      "title": "Golden Prime PG",
+      "summary": "Production readiness, verified workflows, and delivery handoff. Manus AI · 26 August 2026."
+    },
+    {
+      "id": "ready",
+      "title": "Golden Prime PG is ready for delivery",
+      "summary": "Mobile-first PG management PWA, Supabase-only runtime, production URL, and clean-start state.",
+      "image_plan": "/home/ubuntu/upload/search_images/sTqZWnm3WUKH.png - Supabase is the sole supported runtime database path"
+    },
+    {
+      "id": "operating_loop",
+      "title": "The release covers the full operating loop",
+      "summary": "Building, room, tenant, finance, proof, export, offline, and settings surfaces."
+    },
+    {
+      "id": "onboarding",
+      "title": "Building onboarding is now a guided Manager workflow",
+      "summary": "Empty-state CTA, first-building form, floor generator, and building-scoped operations."
+    },
+    {
+      "id": "financial_logic",
+      "title": "Financial logic is explicit and auditable",
+      "summary": "Rent, electricity, shared/assigned charges, dashboards, profit, and credit reconciliation."
+    },
+    {
+      "id": "proof_payments",
+      "title": "Proof and payment operations are built for mobile use",
+      "summary": "Payment methods, private storage, upload recovery, and receipt review auditability."
+    },
+    {
+      "id": "role_boundaries",
+      "title": "Role boundaries protect each building’s data",
+      "summary": "Manager, Owner, and Tenant surfaces with PostgreSQL and procedure-level scope enforcement."
+    },
+    {
+      "id": "reliability",
+      "title": "Reliability evidence is broad and repeatable",
+      "summary": "Regression, typecheck, build, temporary Owner login, and clean-start reset evidence."
+    },
+    {
+      "id": "load_test",
+      "title": "Concurrent sync passed within a documented capacity boundary",
+      "summary": "Bounded and inherited load-test results, zero writes, and the Supabase session-pool constraint."
+    },
+    {
+      "id": "vercel_routing",
+      "title": "Vercel routing now serves the right application",
+      "summary": "Static PWA output, SPA fallback, API/storage proxies, and public deployment verification.",
+      "image_plan": "/home/ubuntu/upload/search_images/G8dgW3ZEXXvd.webp - Vercel routing serves the application"
+    },
+    {
+      "id": "handoff",
+      "title": "Handoff is portable and operationally clear",
+      "summary": "Step guide, portable SQL, audit notes, scripts, and the Supabase-only architecture decision."
+    },
+    {
+      "id": "recommendation",
+      "title": "Delivery recommendation",
+      "summary": "Proceed with Manager-only handoff, configure pooling before higher concurrency, and use stepguide.md."
+    }
+  ]
+}
